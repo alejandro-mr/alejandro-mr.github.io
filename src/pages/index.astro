@@ -1,17 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
 
 const name = 'Alejandro Moreno';
 const content = {
   title: 'Alejandro Moreno - Senior Software Engineer',
 };
+const career = [
+  {
+    company: 'Shopify Inc.',
+    position: 'Senior Software Engineer',
+    from: '04/2021',
+    to: '08/2022',
+    description: 'I was part of the SFN (Shopify Fulfillment Network) acquisitions team, as a senior software engineer my responsibilities included developing backend and frontend web apps to empower the acquisition of new SFN merchants and ease their product fulfillment.',
+  },
+  {
+    company: 'Nagarro / Mokriya Inc.',
+    position: 'Senior Software Engineer',
+    from: '08/2018',
+    to: '02/2021',
+    description: 'Formerly employed at Mokriya (now Nagarro Digital Ventures), a design and development company based in Silicon Valley as a Senior Software Engineer.',
+  },
+  {
+    company: 'Encora / Nearsoft Inc.',
+    position: 'Senior Full-Stack Engineer',
+    from: '02/2013',
+    to: '08/2017',
+    description: 'At Encora (previously Nearsoft Inc.) I had the opportunity of working for different teams in a variety of positions and roles, part of my experiences were:',
+  },
+  {
+    company: 'Internet Brands.',
+    position: 'Senior PHP Developer',
+    from: '05/2011',
+    to: '02/2013',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
+];
 ---
 <Layout content={content}>
-    <section class="px-4 text-3xl text-right">
-      <p>Hello,</p>
-      <p>I'm <span class="italic font-bold">{name}</span></p>
-      <p>a software engineer</p>
-      based in Mexico.
-    </section>
+  <section class="px-5 text-3xl text-right" id="hero">
+    <p>Hello,</p>
+    <p>I'm <span class="italic font-bold">{name}</span></p>
+    <p>a software engineer</p>
+    based in Mexico.
+    <p class="text-sm text-justify italic">Having more than 12 years of experience in a vast array of technologies. Skilled in delivering robust
+    solutions, strong knowledge of web applications and cloud-native technologies, excellent team player with a positive attitude, and strong communication skills.</p>
+  </section>
+  <section class="m-3 mt-12">
+    <h3 class="pl-2 font-bold text-1xl my-2">Experience</h3>
+    {career.map(experience => (
+      <ExperienceCard {...experience} />
+    ))}
+  </section>
 </Layout>

@@ -1,0 +1,10 @@
+---
+const {company, position, from, to, description} = Astro.props;
+---
+
+<div class='grid grid-cols-2 gap-2 drop-shadow-md mb-3 p-2 py-6 bg-gray-100 text-gray-900 text-sm'>
+  <h5 class="col-span-2 font-bold">{company}</h5>
+  <span class="text-left text-viva_magenta">{position}</span>
+  <span class="text-right italic">{from} - {to ? to : 'Present'}</span>
+  <p class="col-span-2 text-justify">{description}</p>
+</div>
