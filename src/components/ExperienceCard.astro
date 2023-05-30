@@ -1,10 +1,15 @@
 ---
-const {company, position, from, to, description} = Astro.props;
+const {company, position, from, to, description, stack} = Astro.props;
 ---
 
-<div class='grid grid-cols-2 gap-2 drop-shadow-md mb-3 p-2 py-6 bg-gray-100 text-gray-900 text-sm'>
+<div class='grid grid-cols-2 gap-2 drop-shadow-md mb-3 p-2 py-6 bg-stone-50 text-gray-900 text-sm transition-all duration-700'>
   <h5 class="col-span-2 font-bold">{company}</h5>
   <span class="text-left text-viva_magenta">{position}</span>
   <span class="text-right italic">{from} - {to ? to : 'Present'}</span>
   <p class="col-span-2 text-justify">{description}</p>
+  <div class="col-span-2 flex flex-wrap gap-2">
+    {stack && stack.map(tech => (
+      <span class="text-blue-950 hover:text-blue-800 text-semibold text-xs">{tech}</span>
+    ))}
+  </div>
 </div>
