@@ -1,0 +1,24 @@
+---
+const SOCIAL_URLS = [
+  {
+    url: 'https://www.linkedin.com/in/josealejandromr/',
+    logo: '/linkedin-round-icon.svg',
+  },
+  {
+    url: 'https://github.com/alejandro-mr',
+    logo: '/github-icon.svg',
+  },
+]
+---
+
+<footer class="mt-10">
+  <ul class="pt-10 pb-40 grid grid-cols-2 gap-4 justify-items-center">
+    {SOCIAL_URLS.map(({url, logo}) => (
+      <li class="w-12 h-12 place-self-justify">
+        <a href={url}>
+          <img class="inline aspect-square fill-blue-500" src={logo} />
+        </a>
+      </li>
+    ))}
+  </ul>
+</footer>

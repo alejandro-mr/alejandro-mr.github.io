@@ -1,0 +1,12 @@
+---
+import Logo from './Logo.astro';
+import Menu from './Menu.astro';
+
+const {title, logo} = Astro.props;
+---
+
+<section class="grid grid-cols-6 grid-rows-2 mx-4 py-4 items-start">
+  {logo && <Logo />}
+  {title && <h1 class="col-span-4 italic">{title}</h1>}
+    <Menu />
+</section>

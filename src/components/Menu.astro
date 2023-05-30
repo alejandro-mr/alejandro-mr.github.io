@@ -1,0 +1,47 @@
+---
+const menuBarStyle = {
+  common: 'h-0.5 bg-gradient-to-br from-viva_magenta_shade to-viva_magenta from-10% collapsed',
+  animation: 'transition-opacity transition-transform duration-1 transform-gpu',
+  transform: '[&:not(.collapsed)]:first:rotate-[405deg] [&:not(.collapsed)]:last:rotate-[-405deg]',
+}
+---
+
+
+<nav role="navigation" class="grid row-span-2 mb-10">
+  <button class="lg:hidden h-3 w-6 grid contenit-between justify-self-end" data-toggle="menu" id="menu-button">
+    <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-full`} />
+    <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-9/12`} />
+    <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-7/12`} />
+  </button>
+  <ul class="">
+    <li>
+      <a>About me</a>
+    </li>
+    <li>
+      <a>Blog</a>
+    </li>
+    <li>
+      <a>Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  let isOpen = false;
+  const button = document.querySelector('button#menu-button');
+
+    button.addEventListener('click', () => {
+      isOpen = isOpen ? false : true;
+      if (isOpen) {
+        for (const child of button.children) {
+          child.classList.remove('collapsed');
+        }
+      }
+      if (!isOpen) {
+        for (const child of button.children) {
+          child.classList.add('collapsed');
+        }
+      }
+      console.log(isOpen);
+    });
+</script>

@@ -1,0 +1,22 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { content } = Astro.props;
+const title = 'Alejandro Moreno';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet" />
+    <title>{content.title}</title>
+  </head>
+  <body class="container h-screen mx-auto bg-gradient-to-b from-background_t from-25% to-background_b text-secondary font-serif">
+    <Header title={title} logo={true} />
+    <slot />
+    <Footer />
+  </body>
+</html>

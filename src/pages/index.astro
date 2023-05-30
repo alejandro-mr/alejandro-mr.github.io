@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+
+const name = 'Alejandro Moreno';
+const content = {
+  title: 'Alejandro Moreno - Senior Software Engineer',
+};
+---
+<Layout content={content}>
+    <section class="px-4 text-3xl text-right">
+      <p>Hello,</p>
+      <p>I'm <span class="italic font-bold">{name}</span></p>
+      <p>a software engineer</p>
+      based in Mexico.
+    </section>
+</Layout>
