@@ -14,6 +14,12 @@ module.exports = {
         background_t: '#03030D',
         background_b: '#0F0F38',
         secondary: '#EBEBFF',
+        ternary: '#17AEE6',
+        four: '#0E475C',
+      },
+      backgroundImage: {
+        'github-icon': "url('/github-icon.svg')",
+        'linkedin-icon': "url('/linkedin-icon.svg')",
       },
       screens: {
         '2xl': '1680px',

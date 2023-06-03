@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
 
-const name = 'Alejandro Moreno';
+const name = 'Alejandro';
+const lastName = 'Moreno';
 const content = {
   title: 'Alejandro Moreno - Senior Software Engineer',
 };
@@ -43,16 +44,18 @@ const career = [
 ];
 ---
 <Layout content={content}>
-  <section class="px-5 text-3xl text-right" id="hero">
+  <section class="py-10 text-3xl text-right" id="hero">
     <p>Hello,</p>
-    <p>I'm <span class="italic font-bold">{name}</span></p>
+    <p>
+      I'm <span class="italic font-bold underline decoration-viva_magenta">{name}</span>
+      <span class="italic font-bold underline decoration-viva_magenta">{lastName}</span>
+    </p>
     <p>a software engineer</p>
-    based in Mexico.
-    <p class="text-sm text-justify italic">Having more than 12 years of experience in a vast array of technologies. Skilled in delivering robust
-    solutions, strong knowledge of web applications and cloud-native technologies, excellent team player with a positive attitude, and strong communication skills.</p>
+    <p>based in Mexico</p>
+    <p class="mt-2 text-base text-justify italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </section>
-  <section class="m-3 mt-12">
-    <h3 class="pl-2 font-bold text-1xl my-2">Experience</h3>
+  <section class="">
+    <h3 class="font-bold text-1xl mb-8">Experience</h3>
     {career.map(experience => (
       <ExperienceCard {...experience} />
     ))}
