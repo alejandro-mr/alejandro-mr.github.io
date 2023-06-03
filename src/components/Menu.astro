@@ -10,7 +10,7 @@ const menuBarStyle = {
 const {withTitle: title, withLogo: logo} = Astro.props;
 ---
 
-<nav role="navigation" class="grid grid-cols-menu row-span-2 mb-10">
+<nav role="navigation" class="grid grid-cols-menu row-span-2">
   { logo && <Logo /> }
   { !logo && <span /> }
   { title && <h2 class="italic font-serif">{title}</h2> }
@@ -19,7 +19,7 @@ const {withTitle: title, withLogo: logo} = Astro.props;
     <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-9/12`} />
     <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} ${menuBarStyle.close} w-7/12`} />
   </button>
-  <ul class="col-span-3 text-right hidden" id="menu">
+  <ul class="col-span-3 text-right sticky top-0 hidden" id="menu">
     <li>
       <a href="#hero">About me</a>
     </li>
