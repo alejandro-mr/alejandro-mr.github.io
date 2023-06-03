@@ -7,6 +7,9 @@ module.exports = {
       logo: ['Bodoni Moda', 'serif'],
     },
     extend: {
+      gridTemplateColumns: {
+        menu: 'min-content auto min-content',
+      },
       colors: {
         viva_magenta: '#BB2649',
         viva_magenta_shade: '#FC3262',

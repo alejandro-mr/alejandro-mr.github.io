@@ -1,12 +1,7 @@
 ---
-import Logo from './Logo.astro';
 import Menu from './Menu.astro';
-
-const {title, logo} = Astro.props;
 ---
 
-<section class="grid grid-cols-6 grid-rows-2 mt-4 items-start">
-  {logo && <Logo />}
-  {(title && !logo) && <h2 class="col-span-5 italic">{title}</h2>}
-    <Menu />
+<section class="grid grid-rows-2 mt-4 items-start">
+  <Menu withTitle='Alejandro Moreno' withLogo={false} />
 </section>

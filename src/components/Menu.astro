@@ -1,28 +1,33 @@
 ---
+import Logo from './Logo.astro';
+
 const menuBarStyle = {
   common: 'h-0.5 bg-gradient-to-br from-viva_magenta_shade to-viva_magenta from-10% collapsed outline-0',
   animation: 'transition-[width] duration-1000 transform-gpu',
   transform: '[&:not(.collapsed)]:opacity-70 [&:not(.collapsed)]:first:w-0 [&:not(.collapsed)]:last:w-0 [&:not(.collapsed):not(:first-child):not(:last-child)]:w-0',
   close: 'animate-wiggle',
 }
+const {withTitle: title, withLogo: logo} = Astro.props;
 ---
 
-
-<nav role="navigation" class="grid row-span-2 mb-10">
-  <button class="lg:hidden h-3 w-6 grid content-between justify-self-end" data-toggle="menu" id="menu-button" aria-label="Navigation menu">
+<nav role="navigation" class="grid grid-cols-menu row-span-2 mb-10">
+  { logo && <Logo /> }
+  { !logo && <span /> }
+  { title && <h2 class="italic font-serif">{title}</h2> }
+  <button class="lg:hidden h-3 w-6 grid content-between" data-toggle="menu" id="menu-button" aria-label="Navigation menu">
     <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-full`} />
     <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-9/12`} />
     <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} ${menuBarStyle.close} w-7/12`} />
   </button>
-  <ul class="">
+  <ul class="col-span-3 text-right hidden" id="menu">
     <li>
-      <a>About me</a>
+      <a href="#hero">About me</a>
     </li>
     <li>
-      <a>Blog</a>
+      <a href="#blog">Blog</a>
     </li>
     <li>
-      <a>Contact</a>
+      <a href="#contact">Contact</a>
     </li>
   </ul>
 </nav>
@@ -30,19 +35,21 @@ const menuBarStyle = {
 <script>
   let isOpen = false;
   const button = document.querySelector('button#menu-button');
+  const menu = document.querySelector('ul#menu');
 
-    button.addEventListener('click', () => {
-      isOpen = isOpen ? false : true;
-      if (isOpen) {
-        for (const child of button.children) {
-          child.classList.remove('collapsed');
-        }
+  button.addEventListener('click', () => {
+    isOpen = isOpen ? false : true;
+    if (isOpen) {
+      menu.classList.remove('hidden');
+      for (const child of button.children) {
+        child.classList.remove('collapsed');
       }
-      if (!isOpen) {
-        for (const child of button.children) {
-          child.classList.add('collapsed');
-        }
+    }
+    if (!isOpen) {
+      menu.classList.add('hidden');
+      for (const child of button.children) {
+        child.classList.add('collapsed');
       }
-      console.log(isOpen);
-    });
+    }
+  });
 </script>
