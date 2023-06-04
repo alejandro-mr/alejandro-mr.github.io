@@ -34,12 +34,17 @@ module.exports = {
           '50%': { transform: 'rotate(3deg)' },
         },
         menu: {
-          '0%': {},
+          '0% 100%': {
+            width: 0,
+          },
+          '50%': {
+            width: '100%',
+          },
         },
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
-        menu: 'menu 2s ease-in-out infinite',
+        menu: 'menu 1s ease-in-out 1',
       },
     },
   },

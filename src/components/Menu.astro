@@ -2,9 +2,12 @@
 import Logo from './Logo.astro';
 
 const menuBarStyle = {
-  common: 'h-0.5 bg-gradient-to-br from-viva_magenta_shade to-viva_magenta from-10% collapsed outline-0',
-  animation: 'transition-[width] duration-1000 transform-gpu',
-  transform: '[&:not(.collapsed)]:opacity-70 [&:not(.collapsed)]:first:w-0 [&:not(.collapsed)]:last:w-0 [&:not(.collapsed):not(:first-child):not(:last-child)]:w-0',
+  common: 'h-0.5 bg-gradient-to-r from-viva_magenta_shade to-viva_magenta from-10% collapsed outline-0',
+  transition: 'transition ease-out duration-1000',
+  transform: ['[&:not(.collapsed)]:first:translate-y-1.5 [&:not(.collapsed)]:first:rotate-[405deg] [&:not(.collapsed)]:first:transform-gpu',
+              '[&:not(.collapsed)]:last:-translate-y-2 [&:not(.collapsed)]:last:rotate-[-405deg] [&:not(.collapsed)]:last:transform-gpu',
+              '[&:not(.collapsed):not(:first-child):not(:last-child)]:scale-y-20 [&:not(.collapsed):not(:first-child):not(:last-child)]:opacity-0 [&:not(.collapsed):not(:first-child):not(:last-child)]:transform-gpu',
+             ],
   close: 'animate-wiggle',
 }
 const {withTitle: title, withLogo: logo} = Astro.props;
@@ -14,12 +17,13 @@ const {withTitle: title, withLogo: logo} = Astro.props;
   { logo && <Logo /> }
   { !logo && <span /> }
   { title && <h2 class="mb-2 italic font-serif font-medium tracking-wider">{title}</h2> }
+  { !title && <span /> }
   <button class="lg:hidden h-4 w-6 grid mb-2 content-between" data-toggle="menu" id="menu-button" aria-label="Navigation menu">
-    <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-full`} />
-    <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} w-9/12`} />
-    <div class={`${menuBarStyle.common} ${menuBarStyle.animation} ${menuBarStyle.transform} ${menuBarStyle.close} w-7/12`} />
+    <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-full`} />
+    <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-10/12 w-full`} />
+    <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-8/12 w-full`} />
   </button>
-  <ul class="col-span-3 -mx-4 px-4 py-1 text-right text-base bg-cyan-700/10 backdrop-blur-md shadow-md shadow-gray-950/20 hidden" id="menu">
+  <ul class="col-span-3 -mx-4 px-4 py-1 text-right text-base bg-gradient-to-br from-cyan-700/20 backdrop-blur-md shadow-md shadow-gray-950/20 hidden" id="menu">
     <li class="py-2">
       <a href="#hero">About me</a>
     </li>
