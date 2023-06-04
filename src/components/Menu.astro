@@ -13,17 +13,17 @@ const menuBarStyle = {
 const {withTitle: title, withLogo: logo} = Astro.props;
 ---
 
-<nav role="navigation" class="grid grid-cols-menu row-span-2 content-start">
+<nav role="navigation" class="grid grid-cols-menu items-start gap-2">
   { logo && <Logo /> }
   { !logo && <span /> }
-  { title && <h2 class="mb-2 italic font-serif font-medium tracking-wider">{title}</h2> }
+  { title && <h2 class="italic font-serif font-medium tracking-wider">{title}</h2> }
   { !title && <span /> }
-  <button class="lg:hidden h-4 w-6 grid mb-2 content-between" data-toggle="menu" id="menu-button" aria-label="Navigation menu">
+  <button class="lg:hidden py-1 h-6 w-6 grid content-between justify-self-end" data-toggle="menu" id="menu-button" aria-label="Navigation menu">
     <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-full`} />
     <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-10/12 w-full`} />
     <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-8/12 w-full`} />
   </button>
-  <ul class="col-span-3 -mx-4 px-4 py-1 text-right text-base bg-gradient-to-br from-cyan-700/20 backdrop-blur-md shadow-md shadow-gray-950/20 hidden" id="menu">
+  <ul class="col-span-3 -mx-4 px-4 py-1 text-right text-base bg-gradient-to-tr from-cyan-700/20 backdrop-blur-md shadow-md shadow-gray-950/20 hidden" id="menu">
     <li class="py-2">
       <a href="#hero">About me</a>
     </li>

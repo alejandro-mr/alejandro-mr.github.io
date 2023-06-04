@@ -9,7 +9,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        menu: 'min-content auto min-content',
+        menu: '12% auto 10%',
       },
       colors: {
         viva_magenta: '#BB2649',
