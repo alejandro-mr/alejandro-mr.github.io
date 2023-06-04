@@ -13,24 +13,24 @@ const menuBarStyle = {
 const {withTitle: title, withLogo: logo} = Astro.props;
 ---
 
-<nav role="navigation" class="grid grid-cols-menu items-start gap-2">
+<nav role="navigation" class="grid grid-cols-menu items-start gap-2 lg:grid-cols-2">
   { logo && <Logo /> }
-  { !logo && <span /> }
-  { title && <h2 class="italic font-serif font-medium tracking-wider">{title}</h2> }
-  { !title && <span /> }
+  { !logo && <span class="invisible lg:hidden" /> }
+  { title && <h2 class="italic font-serif font-medium tracking-wider max-lg:invisible lg:text-lg">{title}</h2> }
+  { !title && <span class="hidden" /> }
   <button class="lg:hidden py-1 h-6 w-6 grid content-between justify-self-end" data-toggle="menu" id="menu-button" aria-label="Navigation menu">
     <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-full`} />
     <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-10/12 w-full`} />
     <div class={`${menuBarStyle.common} ${menuBarStyle.transition} ${menuBarStyle.transform.join(' ')} w-8/12 w-full`} />
   </button>
-  <ul class="col-span-3 -mx-4 px-4 py-1 text-right text-base bg-gradient-to-tr from-cyan-700/20 backdrop-blur-md shadow-md shadow-gray-950/20 hidden" id="menu">
-    <li class="py-2">
+  <ul class="col-span-3 -mx-4 px-4 py-1 text-right text-base bg-gradient-to-tr from-cyan-700/20 backdrop-blur-md shadow-md shadow-gray-950/20 max-lg:hidden lg:col-auto lg:bg-none lg:flex lg:gap-5 lg:justify-end lg:px-0 lg:py-0 lg:mx-0 " id="menu">
+    <li class="py-2 lg:py-0">
       <a href="#hero">About me</a>
     </li>
-    <li class="py-2">
+    <li class="py-2 lg:py-0">
       <a href="#blog">Blog</a>
     </li>
-    <li class="py-2">
+    <li class="py-2 lg:py-0">
       <a href="#contact">Contact</a>
     </li>
   </ul>
@@ -44,13 +44,13 @@ const {withTitle: title, withLogo: logo} = Astro.props;
   button.addEventListener('click', () => {
     isOpen = isOpen ? false : true;
     if (isOpen) {
-      menu.classList.remove('hidden');
+      menu.classList.remove('max-lg:hidden');
       for (const child of button.children) {
         child.classList.remove('collapsed');
       }
     }
     if (!isOpen) {
-      menu.classList.add('hidden');
+      menu.classList.add('max-lg:hidden');
       for (const child of button.children) {
         child.classList.add('collapsed');
       }
