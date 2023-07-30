@@ -6,6 +6,7 @@ module.exports = {
       serif: ['Lora', 'serif'],
       logo: ['Bodoni Moda', 'serif'],
       'plus-jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+      overpass: ['Overpass', 'sans-serif'],
     },
     extend: {
       gridTemplateColumns: {
