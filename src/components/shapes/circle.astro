@@ -1,0 +1,14 @@
+---
+const COLORS = {
+  a: 'indigo-500',
+  b: 'green-300',
+  c: 'red-500',
+  d: 'sky-500',
+};
+
+const { variant } = Astro.props;
+const color = variant ? COLORS[variant] : COLORS['a'];
+const circleStyle = `w-10 h-10 rounded-full cursor-pointer select-none`;
+---
+
+<div class={circleStyle + ' bg-red-500'} />

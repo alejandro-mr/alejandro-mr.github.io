@@ -16,7 +16,7 @@ module.exports = {
         viva_magenta: '#BB2649',
         viva_magenta_shade: '#FC3262',
         primary: '#6667ab',
-        background_t: '#03030D',
+        background_t: '#0E0E1A',//'#03030D',
         background_b: '#0F0F38',
         secondary: '#EBEBFF',
         ternary: '#17AEE6',

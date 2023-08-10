@@ -8,6 +8,15 @@ const blogCollection = defineCollection({
   }),
 });
 
+const experimentsCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    published: z.date(),
+  }),
+});
+
 export const collection = {
   blog: blogCollection,
+  experiments: experimentsCollection,
 };

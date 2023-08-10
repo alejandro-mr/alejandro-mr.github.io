@@ -2,13 +2,9 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const DEFAULT_TITLE = 'Alejandro Moreno - Blog';
-
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog', ({ data }) => {
-    return data.draft !== true;
-  });
-  return blogEntries.map(entry => ({
+  const expEntries = await getCollection('experiments');
+  return expEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
@@ -16,8 +12,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
+const DEFAULT_TITLE = 'Alejandro Moreno - experiments';
+
 const layoutContent = {
-  title: entry.data.title ? `Aljandro Moreno - ${entry.data.title}` : DEFAULT_TITLE,
+  title: entry.data.title ? 'Alejandro Moreno - ${entry.data.title}' : DEFAULT_TITLE,
 };
 ---
 
