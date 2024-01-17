@@ -1,0 +1,111 @@
+---
+import ExperienceCard from './ExperienceCard.astro';
+import Tech from '../constants/Technologies';
+
+const career = [
+  {
+    company: 'Raizen Inc.',
+    position: 'Independent Consultant',
+    from: '12/2022',
+    description:
+      "I'm currently contributing as a consultant for Raizen.io a US-based company specializing in cloud-based solutions, where I've been able to apply my knowledge about architecture, system design, and coding practices, as well as recommendations on tooling for different projects.",
+    stack: [
+      Tech.ruby,
+      Tech.rails,
+      Tech.postgresql,
+      Tech.stimulus,
+      Tech.typescript,
+      Tech.nodejs,
+      Tech.nextjs,
+      Tech.nestjs,
+      Tech.react,
+      Tech.tailwind,
+    ],
+  },
+  {
+    company: 'Shopify Inc.',
+    position: 'Senior Software Engineer',
+    from: '04/2021',
+    to: '08/2022',
+    description:
+      'I was part of the SFN (Shopify Fulfillment Network) acquisitions team, as a senior software engineer my responsibilities included developing backend and frontend web apps to empower the acquisition of new SFN merchants and ease their product fulfillment.',
+    stack: [
+      Tech.ruby,
+      Tech.rails,
+      Tech.react,
+      Tech.graphql,
+      Tech.typescript,
+      Tech.postgresql,
+      Tech.tailwind,
+    ],
+  },
+  {
+    company: 'Nagarro / Mokriya Inc.',
+    position: 'Senior Software Engineer',
+    from: '08/2018',
+    to: '02/2021',
+    description:
+      'Formerly employed at Mokriya (now Nagarro Digital Ventures), a design and development company based in Silicon Valley as a Senior Software Engineer.',
+    stack: [
+      Tech.nodejs,
+      Tech.typescript,
+      Tech.javascript,
+      Tech.react,
+      Tech.go,
+      Tech.mongodb,
+      Tech.graphql,
+      Tech.microservices,
+      Tech.event_driven,
+      Tech.pubsub,
+      Tech.k8s,
+      Tech.docker,
+    ],
+  },
+  {
+    company: 'Encora / Nearsoft Inc.',
+    position: 'Senior Full-Stack Engineer',
+    from: '02/2013',
+    to: '08/2017',
+    description:
+      'At Encora (previously Nearsoft Inc.) I had the opportunity of working for different teams in a variety of positions and roles, part of my experiences were:',
+    stack: [
+      Tech.nodejs,
+      Tech.typescript,
+      Tech.javascript,
+      Tech.react,
+      Tech.angular,
+      Tech.java,
+      Tech.php,
+      Tech.mongodb,
+      Tech.postgresql,
+      Tech.mysql,
+      Tech.redis,
+      Tech.restful,
+      Tech.docker,
+    ],
+  },
+  {
+    company: 'Internet Brands.',
+    position: 'Senior PHP Developer',
+    from: '05/2011',
+    to: '02/2013',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    stack: [
+      Tech.php,
+      Tech.javascript,
+      Tech.css,
+      Tech.angular,
+      Tech.jquery,
+      Tech.postgresql,
+    ],
+  },
+];
+---
+
+<section class="grid gap-12">
+  <h3 class="text-xl font-bold">Experience</h3>
+  <div class="grid gap-10 text-sm">
+    {career.map((experience) => <ExperienceCard {...experience} />)}
+  </div>
+</section>

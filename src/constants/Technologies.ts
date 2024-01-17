@@ -1,0 +1,33 @@
+const TECHNOLOGIES = {
+  ruby: 'Ruby',
+  nodejs: 'NodeJS',
+  php: 'PHP',
+  typescript: 'TypeScript',
+  javascript: 'JavaScript',
+  go: 'Go',
+  java: 'Java',
+  rails: 'RoR',
+  react: 'React',
+  angular: 'Angular',
+  nextjs: 'Next.js',
+  nestjs: 'NestJS',
+  stimulus: 'Stimulus/Turbo',
+  jquery: 'jQuery',
+  postgresql: 'PostgreSQL',
+  mysql: 'MySQL/MariaDB',
+  mongodb: 'MongoDB',
+  redis: 'Redis',
+  css: 'CSS',
+  tailwind: 'Tailwind',
+  restful: 'RESTful',
+  rest: 'REST',
+  graphql: 'GraphQL',
+  docker: 'Docker',
+  k8s: 'Kubernetes',
+  microservices: 'Microservices',
+  event_driven: 'Event-Driven',
+  pubsub: 'PubSub',
+};
+
+export default TECHNOLOGIES;
+export { TECHNOLOGIES };

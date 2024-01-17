@@ -1,0 +1,24 @@
+---
+const { company, position, from, to, description, stack } = Astro.props;
+---
+
+<div class="grid grid-cols-2 gap-2.5">
+  <h4
+    class="col-span-full font-semibold text-base underline decoration-party-punch"
+  >
+    {company}
+  </h4>
+  <span class="font-semibold">{position}</span>
+  <span class="justify-self-end">{from} - {to ? to : 'Present'}</span>
+  <p class="col-span-full">{description}</p>
+  <div class="col-span-full flex flex-wrap gap-2">
+    {
+      stack &&
+        stack.map((tech: string) => (
+          <span class="p-2 rounded-lg bg-pristine text-marsala text-xs drop-shadow-[1px_2px_2px_rgba(18,20,25,0.8)]">
+            <span class="opacity-80">{tech}</span>
+          </span>
+        ))
+    }
+  </div>
+</div>
