@@ -15,8 +15,8 @@ const { company, position, from, to, description, stack } = Astro.props;
     {
       stack &&
         stack.map((tech: string) => (
-          <span class="p-2 rounded-lg bg-pristine text-marsala text-xs drop-shadow-[1px_2px_2px_rgba(18,20,25,0.8)]">
-            <span class="opacity-80">{tech}</span>
+          <span class="p-2 rounded-lg bg-pristine text-marsala text-xs font-normal drop-shadow-[1px_2px_2px_rgba(18,20,25,0.8)]">
+            {tech}
           </span>
         ))
     }

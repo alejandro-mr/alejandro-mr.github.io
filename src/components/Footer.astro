@@ -1,10 +1,12 @@
 ---
 import Github from './Github.astro';
 import LinkedIn from './LinkedIn.astro';
+
+const year = new Date().getFullYear();
 ---
 
 <footer
-  class="mt-10 -mx-4 bg-gradient-to-b to-background from-50% from-blueberry"
+  class="mt-10 pb-4 -mx-4 md:-mx-8 lg:-mx-12 bg-no-repeat bg-gradient-to-t from-background from-30% text-center"
   id="contact"
 >
   <ul class="pt-10 pb-14 grid grid-cols-2 gap-4 justify-items-center">
@@ -15,4 +17,5 @@ import LinkedIn from './LinkedIn.astro';
       <LinkedIn />
     </li>
   </ul>
+  <span class="text-xs">{year} | Alejandro Moreno</span>
 </footer>
